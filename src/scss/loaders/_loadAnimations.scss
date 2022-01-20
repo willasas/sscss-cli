@@ -1,0 +1,580 @@
+/**
+ * loading-global-animate
+*/
+
+// ball-beat animate
+@keyframes ball-beat {
+  50% {
+    opacity: 0.2;
+    transform: scale(0.75);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ball-grid-beat animate
+@keyframes ball-grid-beat {
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// ball-grid-pulse animate
+@keyframes ball-grid-pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+    opacity: 0.7;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// ball-clip-rotate-multiple and ball-clip-rotate-pulse aminate 
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) scale(1);
+  }
+  50% {
+    transform: rotate(180deg) scale(0.6);
+  }
+  100% {
+   transform: rotate(360deg) scale(1);
+ }
+}
+
+// semi-circle-spin animate
+@keyframes spin-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+// rotate-pacman-half-up animate
+@keyframes rotate-pacman-half-up  {
+  0% {
+       transform:rotate(270deg);
+  }
+  50% {
+       transform:rotate(360deg);
+  }
+  100% {
+       transform:rotate(270deg);
+  }
+}
+
+@keyframes rotate-pacman-half-down  {
+  0% {
+       transform:rotate(90deg);
+  }
+  50% {
+       transform:rotate(0deg);
+  }
+  100% {
+       transform:rotate(90deg);
+  }
+}
+
+@keyframes pacman-balls {
+  75% {
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: translate(-4 * $amount25, -$amount25 / 4);
+  }
+}
+
+// ball-clip-rotate-pulse aminate
+@keyframes scale {
+  30% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// ball-pulse animate[changes name]
+@keyframes scale-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(0.1);
+    opacity: 0.7;
+  }
+  80% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+// ball-clip-rotate and ball-rotate animate
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+   transform: rotate(360deg);
+ }
+}
+
+// ball-pulse-rise animate
+@keyframes ball-pulse-rise-even {
+  0% {
+    transform: scale(1.1);
+  }
+  25% {
+    transform: translateY(-$amount30);
+  }
+  50% {
+    transform: scale(0.4);
+  }
+  75% {
+    transform: translateY($amount30);
+  }
+  100% {
+    transform: translateY(0);
+    transform: scale(1.0);
+  }
+}
+
+@keyframes ball-pulse-rise-odd {
+  0% {
+    transform: scale(0.4);
+  }
+  25% {
+    transform: translateY($amount30);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  75% {
+    transform: translateY(-$amount30);
+  }
+  100% {
+    transform: translateY(0);
+    transform: scale(0.75);
+  }
+}
+
+// ball-pulse-round and circle-dot animate
+@keyframes ball-pulse-round {
+  0%, 80%, 100% {
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 40% {
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+// ball-pulse-sync animate
+@keyframes ball-pulse-sync {
+  33% {
+    transform: translateY($amount10);
+  }
+  66% {
+    transform: translateY(-$amount10);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+// ball-scale-multiple animate
+@keyframes ball-scale-multiple {
+  0% {
+    transform: scale(0.0);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+// ball-scale and ball-scale-random animate
+@keyframes ball-scale {
+  0% {
+    transform: scale(0.0);
+  }
+  100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+// ball-scale-ripple-multiple and ball-scale-ripple animate
+@keyframes ball-scale-ripple-multiple {
+  0% {
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+// ball-spin-fade-loader animate
+@keyframes ball-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+    transform: scale(0.4);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+// ball-spin-loader animate
+@keyframes ball-spin-loader {
+  75% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// ball-triangle-path animate
+@keyframes ball-triangle-path-1 {
+  33% {
+    transform: translate($amount50 / 2, -$amount50);
+  }
+  66% {
+    transform: translate($amount50, $amount);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+@keyframes ball-triangle-path-2 {
+  33% {
+    transform: translate($amount50 / 2, $amount50);
+  }
+  66% {
+    transform: translate(-$amount50 / 2, $amount50);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+@keyframes ball-triangle-path-3 {
+  33% {
+    transform: translate(-$amount50, $amount);
+  }
+  66% {
+    transform: translate(-$amount50 / 2, -$amount50);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+// ball-zig-zag-deflect animate
+@keyframes ball-zig-deflect {
+  17% {
+    transform: translate(-$amount30/2, -$amount30);
+  }
+  34% {
+    transform: translate($amount30/2, -$amount30);
+  }
+  50% {
+    transform: translate($amount, $amount);
+  }
+  67% {
+    transform: translate($amount30/2, -$amount30);
+  }
+  84% {
+    transform: translate(-$amount30/2, -$amount30);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+@keyframes ball-zag-deflect {
+  17% {
+    transform: translate($amount30/2, $amount30);
+  }
+  34% {
+    transform: translate(-$amount30/2, $amount30);
+  }
+  50% {
+    transform: translate($amount, $amount);
+  }
+  67% {
+    transform: translate(-$amount30/2, $amount30);
+  }
+  84% {
+    transform: translate($amount30/2, $amount30);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+// ball-zig-zag animate
+@keyframes ball-zig {
+  33% {
+    transform: translate(-$amount30/2, -$amount30);
+  }
+  66% {
+    transform: translate($amount30/2, -$amount30);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+@keyframes ball-zag {
+  33% {
+    transform: translate($amount30/2, $amount30);
+  }
+  66% {
+    transform: translate(-$amount30/2, $amount30);
+  }
+  100% {
+    transform: translate($amount, $amount);
+  }
+}
+
+// cube-transition animate
+@keyframes cube-transition {
+  25% {
+    transform: translateX($amount50) scale(0.5) rotate(-90deg);
+  }
+  50% {
+    transform: translate($amount50, $amount50) rotate(-180deg);
+  }
+  75% {
+    transform: translateY($amount50) scale(0.5) rotate(-270deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// line-scale-pulse-out-rapid aminate
+@keyframes line-scale-pulse-out-rapid {
+  0% {
+    transform: scaley(1.0);
+  }
+  80% {
+    transform: scaley(0.3);
+  }
+  90% {
+    transform: scaley(1.0);
+  }
+}
+
+// line-scale-pulse-out and line-scale animate
+@keyframes line-scale-pulse-out {
+  0% {
+    transform: scaley(1.0);
+  }
+  50% {
+    transform: scaley(0.4);
+  }
+  100% {
+    transform: scaley(1.0);
+  }
+}
+
+// line-scale-party animate
+@keyframes line-scale-party {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+// line-spin-fade-loader animate
+@keyframes line-spin-fade-loader {
+  50% {
+    opacity: 0.3;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+// square-spin and triangle-skew-spin aminate
+@keyframes square-spin {
+  25% {
+    transform: perspective($amount100) rotateX(180deg) rotateY(0);
+  }
+  50% {
+    transform: perspective($amount100) rotateX(180deg) rotateY(180deg);
+  }
+  75% {
+    transform: perspective($amount100) rotateX(0) rotateY(180deg);
+  }
+  100% {
+    transform: perspective($amount100) rotateX(0) rotateY(0);
+  }
+}
+
+// point-chase and ball-swing aminate
+@keyframes point-chase {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes point-chase-child {
+
+  80%,
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes point-chase-child-before {
+  50% {
+    transform: scale(0.4);
+  }
+
+  100%,
+  0% {
+    transform: scale(1.0);
+  }
+}
+
+// ball-bounce aminate
+@keyframes ball-bounce {
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  45%,
+  55% {
+    transform: scale(1);
+  }
+}
+
+// ball-swing-child aminate
+@keyframes ball-swing-child {
+  0%,
+  100% {
+    transform: scale(0.2);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+
+// grid-cube aminate
+@keyframes grid-cube {
+  0%,
+  70%,
+  100% {
+    transform: scale3D(1, 1, 1);
+  }
+
+  35% {
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+// wander-cube animate
+@keyframes wander-cube {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: translateX(#{$load-wander-distance}) rotate(-90deg) scale(0.6);
+  }
+
+  50% {
+    /* Make FF rotate in the right direction */
+    transform: translateX($load-wander-distance) translateY($load-wander-distance) rotate(-179deg);
+  }
+
+  50.1% {
+    transform: translateX($load-wander-distance) translateY($load-wander-distance) rotate(-180deg);
+  }
+
+  75% {
+    transform: translateX(0) translateY($load-wander-distance) rotate(-270deg) scale(0.6);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+
+// fold-cube animate
+@keyframes fold-cube {
+  0%,
+  10% {
+    transform: perspective(140px) rotateX(-180deg);
+    opacity: 0;
+  }
+
+  25%,
+  75% {
+    transform: perspective(140px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  90%,
+  100% {
+    transform: perspective(140px) rotateY(180deg);
+    opacity: 0;
+  }
+}
+
+// circle-fade animate
+@keyframes circle-fade {
+  0%,
+  39%,
+  100% {
+    opacity: 0;
+    transform: scale(0.6);
+  }
+
+  40% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

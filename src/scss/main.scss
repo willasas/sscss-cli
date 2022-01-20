@@ -1,0 +1,47 @@
+/*!
+ * sscss-cli (https://github.com/willasas/sscss-cli.git)
+ * Version: 1.1.1
+ * Author: william asas
+ * Author URL: https://github.com/willasas/
+ * Github: https://github.com/willasas/sscss-cli.git
+ * Copyright (c) 2022 William asas
+ *
+ * All animations must live in their own file
+ * in the animations directory and be included
+ * here.
+ *
+*/
+
+
+/**
+ * Styles shared by multiple animations
+ */
+@import 'normalize';
+@import 'variables';
+@import 'mixins';
+@import 'functions';
+
+/**
+  * animations
+  */
+@import 'animations/animation';
+
+/**
+ * hover
+ */
+@import 'hover/hover';
+
+/**
+ * loaders
+ */
+@import 'loaders/loading';
+
+/**
+ * themes
+ */
+@import 'themes/theme';
+
+/**
+ * layout
+ */
+@import 'layout/layout';

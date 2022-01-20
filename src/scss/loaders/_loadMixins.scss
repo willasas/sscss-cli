@@ -1,0 +1,298 @@
+/**
+ * loading-global-mixin
+*/
+@mixin global-bg() {
+  background-color: $load-primary-color;
+}
+
+@mixin global-animation() {
+  animation-fill-mode: both;
+}
+
+@mixin balls() {
+  @include global-bg();
+
+  width: $load-ball-size;
+  height: $load-ball-size;
+  border-radius: 100%;
+  margin: $load-margin;
+}
+
+@mixin lines() {
+  @include global-bg();
+  width: $load-line-width;
+  height: $load-line-height;
+  border-radius: 2px;
+  margin: $load-margin;
+}
+
+/**
+* class width pacman mixins
+*/
+@mixin pacman-design() {
+  width: 0px;
+  height: 0px;
+  border-right: $load-border solid transparent;
+  border-top: $load-border solid $load-primary-color;
+  border-left: $load-border solid $load-primary-color;
+  border-bottom: $load-border solid $load-primary-color;
+  border-radius: $load-border;
+}
+
+@mixin ball-placement($n:3, $start:0) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i + 2}) {
+      animation: pacman-balls 1s delay(.33s, $n, $i) infinite linear;
+    }
+  }
+}
+
+/**
+* class width line-spin-fade-loader mixins
+*/
+@mixin line-spin-fade-loader($n:8, $start:1) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      $iter: 360 / $n;
+      $quarter: ($load-radius / 2) + ($load-radius / 5.5);
+
+      @if $i==1 {
+        top: $load-radius;
+        left: 0;
+      }
+
+      @else if $i==2 {
+        top: $quarter;
+        left: $quarter;
+        transform: rotate(-45deg);
+      }
+
+      @else if $i==3 {
+        top: 0;
+        left: $load-radius;
+        transform: rotate(90deg);
+      }
+
+      @else if $i==4 {
+        top: -$quarter;
+        left: $quarter;
+        transform: rotate(45deg);
+      }
+
+      @else if $i==5 {
+        top: -$load-radius;
+        left: 0;
+      }
+
+      @else if $i==6 {
+        top: -$quarter;
+        left: -$quarter;
+        transform: rotate(-45deg);
+      }
+
+      @else if $i==7 {
+        top: 0;
+        left: -$load-radius;
+        transform: rotate(90deg);
+      }
+
+      @else if $i==8 {
+        top: $quarter;
+        left: -$quarter;
+        transform: rotate(45deg);
+      }
+
+      animation: line-spin-fade-loader 1.2s delay(0.12s, $n, $i) infinite ease-in-out;
+    }
+  }
+}
+
+/**
+* class width line-scale mixins
+*/
+@mixin line-scale($n:5) {
+  @for $i from 1 through $n {
+    >div:nth-child(#{$i}) {
+      animation: line-scale-pulse-out 1s delay(0.1s, $n, $i) infinite cubic-bezier(.2, .68, .18, 1.08);
+    }
+  }
+}
+
+/**
+* class width line-scale-party mixins
+*/
+@mixin line-scale-party($n:4) {
+  @for $i from 1 through $n {
+    >div:nth-child(#{$i}) {
+      animation-delay: ((random(100) / 100) - 0.2) + s;
+      animation-duration: ((random(100) / 100) + 0.3) + s;
+    }
+  }
+}
+
+/**
+* class width ball-triangle-path mixins
+*/
+@mixin ball-triangle-path($n:3) {
+  $animations: ball-triangle-path-1 ball-triangle-path-2 ball-triangle-path-3;
+
+  @for $i from 1 through $n {
+    > div:nth-child(#{$i}) {
+      animation-name: nth($animations, $i);
+      animation-delay: 0;
+      animation-duration: 2s;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+    }
+  }
+}
+
+/**
+* class width ball-spin-loader mixins
+*/
+@mixin ball-spin-loader($n:8, $start:1) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      $iter: 360 / $n;
+      $quarter: ($load-spacing / 2) + ($load-spacing / 5.5);
+
+      @if $i==1 {
+        top: $load-spacing;
+        left: 0;
+      }
+
+      @else if $i==2 {
+        top: $quarter;
+        left: $quarter;
+      }
+
+      @else if $i==3 {
+        top: 0;
+        left: $load-spacing;
+      }
+
+      @else if $i==4 {
+        top: -$quarter;
+        left: $quarter;
+      }
+
+      @else if $i==5 {
+        top: -$load-spacing;
+        left: 0;
+      }
+
+      @else if $i==6 {
+        top: -$quarter;
+        left: -$quarter;
+      }
+
+      @else if $i==7 {
+        top: 0;
+        left: -$load-spacing;
+      }
+
+      @else if $i==8 {
+        top: $quarter;
+        left: -$quarter;
+      }
+
+      animation: ball-spin-loader 2s ($i * 0.9s) infinite linear;
+    }
+  }
+}
+
+/**
+* class width ball-spin-fade-loader mixins
+*/
+@mixin ball-spin-fade-loader($n:8, $start:1) {
+  @for $i from $start through $n {
+    > div:nth-child(#{$i}) {
+      $iter: 360 / $n;
+      $quarter: ($load-border / 2) + ($load-border / 5.5);
+
+      @if $i == 1 {
+        top: $load-border;
+        left: 0;
+      } @else if $i == 2 {
+        top: $quarter;
+        left: $quarter;
+      } @else if $i == 3 {
+        top: 0;
+        left: $load-border;
+      } @else if $i == 4 {
+        top: -$quarter;
+        left: $quarter;
+      } @else if $i == 5 {
+        top: -$load-border;
+        left: 0;
+      } @else if $i == 6 {
+        top: -$quarter;
+        left: -$quarter;
+      } @else if $i == 7 {
+        top: 0;
+        left: -$load-border;
+      } @else if $i == 8 {
+        top: $quarter;
+        left: -$quarter;
+      }
+
+      animation: ball-spin-fade-loader 1s delay(0.12s, $n, $i - 1) infinite linear;
+    }
+  }
+}
+
+/**
+* class width ball-scale-ripple-multiple mixins
+*/
+@mixin ball-scale-ripple-multiple ($n:3, $start:0) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      animation-delay: delay(0.2s, $n, $i - 1);
+    }
+  }
+}
+
+/**
+* class width ball-scale-multiple mixins
+*/
+@mixin ball-scale-multiple ($n: 3, $start: 2) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      animation-delay: delay(0.2s, $n, $i - 1);
+    }
+  }
+}
+
+/**
+* class width ball-grid-beat and ball-grid-pulse mixins
+*/
+@mixin ball-grid-beat($n:9) {
+  @for $i from 1 through $n {
+    >div:nth-child(#{$i}) {
+      animation-delay: ((random(100) / 100) - 0.2) + s;
+      animation-duration: ((random(100) / 100) + 0.6) + s;
+    }
+  }
+}
+
+/**
+* class width ball-pulse-sync mixins
+*/
+@mixin ball-pulse-sync($n: 3, $start: 1) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      animation: ball-pulse-sync 0.6s delay(0.07s, $n, $i) infinite ease-in-out;
+    }
+  }
+}
+
+/**
+* class width ball-pulse mixins
+*/
+@mixin ball-pulse($n: 3, $start: 1) {
+  @for $i from $start through $n {
+    >div:nth-child(#{$i}) {
+      animation: scale-pulse 0.75s delay(0.12s, $n, $i) infinite cubic-bezier(.2, .68, .18, 1.08);
+    }
+  }
+}

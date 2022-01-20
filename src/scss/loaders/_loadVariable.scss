@@ -1,0 +1,64 @@
+/**
+ * loading-Config
+*/
+
+// config class
+$load-size: 40px !default;
+$load-color: #333 !default;
+$load-wander-distance: $load-size * 0.75 !default;
+$load-primary-color: #000 !default;
+$load-ball-size: 15px !default;
+$load-margin: 2px !default;
+$load-line-height: 35px !default;
+$load-line-width: 4px !default;
+$load-pos: 30% !default;
+// config animations
+$amount: 0px !default;
+$amount10: 10px !default;
+$amount20: 20px !default;
+$amount25: 25px !default;
+$amount30: 30px !default;
+$amount40: 40px !default;
+$amount50: 50px !default;
+$amount60: 60px !default;
+$amount70: 70px !default;
+$amount80: 80px !default;
+$amount90: 90px !default;
+$amount100: 100px !default;
+$opacity0: 0 !default;
+$opacity1: 0.1 !default;
+$opacity2: 0.2 !default;
+$opacity3: 0.3 !default;
+$opacity4: 0.4 !default;
+$opacity5: 0.5 !default;
+$opacity6: 0.6 !default;
+$opacity7: 0.7 !default;
+$opacity8: 0.8 !default;
+$opacity9: 0.9 !default;
+$opacity10: 1.0 !default;
+$angle0: 0deg !default;
+$angle1: 1deg !default;
+$angle2: 2deg !default;
+$angle3: 3deg !default;
+$angle4: 4deg !default;
+$angle5: 5deg !default;
+$angle6: 6deg !default;
+$angle7: 7deg !default;
+$angle8: 8deg !default;
+$angle9: 9deg !default;
+$angle10: 10deg !default;
+$angle30: 30deg !default;
+$angle45: 45deg !default;
+$angle60: 60deg !default;
+$angle90: 90deg !default;
+$angle120: 120deg !default;
+$angle180: 180deg !default;
+$angle240: 240deg !default;
+$angle270: 270deg !default;
+$angle300: 300deg !default;
+$angle360: 360deg !default;
+
+// config mixins file
+$load-border: 25px !default;
+$load-spacing: 45px !default;
+$load-radius: $amount20 !default;

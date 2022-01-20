@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>loaders plug-in unit Examples</title>
+		<link rel="stylesheet" type="text/css" href="css/loading.css" />
+		<style>
+			.wrap {
+				display: grid;
+				display: -ms-grid;
+				grid-template-columns: repeat(8, 1fr);
+				grid-template-rows: repeat(5, 1fr);
+				grid-column-gap: 0px;
+				grid-row-gap: 0px;
+			}
+			.example {
+				padding: 100px;
+				border-bottom: 1px solid rgb(247, 170, 5);
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-wrap: nowrap;
+				flex-direction: row;
+				-ms-flex-direction: row;
+			}
+			.exp1 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp2 {
+				grid-area: 1 / 2 / 2 / 3;
+			}
+			.exp3 {
+				grid-area: 1 / 3 / 2 / 4;
+			}
+			.exp4 {
+				grid-area: 1 / 4 / 2 / 5;
+			}
+			.exp5 {
+				grid-area: 1 / 5 / 2 / 6;
+			}
+			.exp6 {
+				grid-area: 1 / 6 / 2 / 7;
+			}
+			.exp7 {
+				grid-area: 1 / 7 / 2 / 8;
+			}
+			.exp8 {
+				grid-area: 1 / 8 / 2 / 9;
+			}
+			.exp9 {
+				grid-area: 2 / 1 / 3 / 2;
+			}
+			.exp10 {
+				grid-area: 2 / 2 / 3 / 3;
+			}
+			.exp11 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp12 {
+				grid-area: 2 / 4 / 3 / 5;
+			}
+			.exp13 {
+				grid-area: 2 / 5 / 3 / 6;
+			}
+			.exp14 {
+				grid-area: 2 / 6 / 3 / 7;
+			}
+			.exp15 {
+				grid-area: 2 / 7 / 3 / 8;
+			}
+			.exp16 {
+				grid-area: 2 / 8 / 3 / 9;
+			}
+			.exp17 {
+				grid-area: 3 / 1 / 4 / 2;
+			}
+			.exp18 {
+				grid-area: 3 / 2 / 4 / 3;
+			}
+			.exp19 {
+				grid-area: 3 / 3 / 4 / 4;
+			}
+			.exp20 {
+				grid-area: 3 / 4 / 4 / 5;
+			}
+			.exp21 {
+				grid-area: 3 / 5 / 4 / 6;
+			}
+			.exp22 {
+				grid-area: 3 / 6 / 4 / 7;
+			}
+			.exp23 {
+				grid-area: 3 / 7 / 4 / 8;
+			}
+			.exp24 {
+				grid-area: 3 / 8 / 4 / 9;
+			}
+			.exp25 {
+				grid-area: 4 / 1 / 5 / 2;
+			}
+			.exp26 {
+				grid-area: 4 / 2 / 5 / 3;
+			}
+			.exp27 {
+				grid-area: 4 / 3 / 5 / 4;
+			}
+			.exp28 {
+				grid-area: 4 / 4 / 5 / 5;
+			}
+			.exp29 {
+				grid-area: 4 / 5 / 5 / 6;
+			}
+			.exp30 {
+				grid-area: 4 / 6 / 5 / 7;
+			}
+			.exp31 {
+				grid-area: 4 / 7 / 5 / 8;
+			}
+			.exp32 {
+				grid-area: 4 / 8 / 5 / 9;
+			}
+			.exp33 {
+				grid-area: 5 / 1 / 6 / 2;
+			}
+			.exp34 {
+				grid-area: 5 / 2 / 6 / 3;
+			}
+			.exp35 {
+				grid-area: 5 / 3 / 6 / 4;
+			}
+			.exp36 {
+				grid-area: 5 / 4 / 6 / 5;
+			}
+			.exp37 {
+				grid-area: 5 / 5 / 6 / 6;
+			}
+			.exp38 {
+				grid-area: 5 / 6 / 6 / 7;
+			}
+			.exp39 {
+				grid-area: 5 / 7 / 6 / 8;
+			}
+			.exp40 {
+				grid-area: 5 / 8 / 6 / 9;
+			}
+			.exp41 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp42 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp43 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp44 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp45 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp46 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp47 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp48 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp49 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp50 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp51 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp52 {
+				grid-area: 2 / 3 / 3 / 4;
+			}
+			.exp53 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+			.exp54 {
+				grid-area: 1 / 1 / 2 / 2;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap">
+			<!-- ball-pulse -->
+			<div class="example exp1" style="padding: 26px">
+				<div class="ball-pulse">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-pulse-sync -->
+			<div class="example exp2" style="padding: 26px">
+				<div class="ball-pulse-sync">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-pulse-round -->
+			<div class="example exp3" style="padding: 26px">
+				<div class="ball-pulse-round">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- circle-dot -->
+			<div class="example exp4">
+				<div class="circle-dot">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-pulse-rise -->
+			<div class="example exp5" style="padding: 26px">
+				<div class="ball-pulse-rise">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-grid-beat -->
+			<div class="example exp6">
+				<div class="ball-grid-beat">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-grid-pulse -->
+			<div class="example exp7">
+				<div class="ball-grid-pulse">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-clip-rotate-pulse -->
+			<div class="example exp8">
+				<div class="ball-clip-rotate-pulse">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-clip-rotate-multiple -->
+			<div class="example exp9">
+				<div class="ball-clip-rotate-multiple">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-beat -->
+			<div class="example exp10" style="padding: 26px">
+				<div class="ball-beat">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-clip-rotate -->
+			<div class="example exp11">
+				<div class="ball-clip-rotate">
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-rotate -->
+			<div class="example exp12">
+				<div class="ball-rotate">
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-scale-multiple -->
+			<div class="example exp13" style="padding: 26px">
+				<div class="ball-scale-multiple">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-scale-ripple-multiple -->
+			<div class="example exp14" style="padding: 26px">
+				<div class="ball-scale-ripple-multiple">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-scale-ripple -->
+			<div class="example exp15" style="padding: 26px">
+				<div class="ball-scale-ripple">
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-scale-random -->
+			<div class="example exp16" style="padding: 26px">
+				<div class="ball-scale-random">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-scale -->
+			<div class="example exp17" style="padding: 26px">
+				<div class="ball-scale">
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-spin-fade-loader -->
+			<div class="example exp18" style="padding: 26px">
+				<div class="ball-spin-fade-loader">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-spin-loader -->
+			<div class="example exp19" style="padding: 26px">
+				<div class="ball-spin-loader">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-triangle-path -->
+			<div class="example exp20" style="padding: 26px">
+				<div class="ball-triangle-path">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-zig-zag-deflect -->
+			<div class="example exp21" style="padding: 26px">
+				<div class="ball-zig-zag-deflect">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-zig-zag -->
+			<div class="example exp22" style="padding: 26px">
+				<div class="ball-zig-zag">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- cube-transition -->
+			<div class="example exp23" style="padding: 26px">
+				<div class="cube-transition">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- line-scale-pulse-out-rapid -->
+			<div class="example exp24" style="padding: 26px">
+				<div class="line-scale-pulse-out-rapid">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- line-scale-pulse-out -->
+			<div class="example exp25" style="padding: 26px">
+				<div class="line-scale-pulse-out">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+
+			<!-- line-scale -->
+			<div class="example exp26" style="padding: 26px">
+				<div class="line-scale">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- line-spin-fade-loader -->
+			<div class="example exp27">
+				<div class="line-spin-fade-loader">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- pac-man -->
+			<div class="example exp28">
+				<div class="pac-man">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- semi-circle-spin -->
+			<div class="example exp29">
+				<div class="semi-circle-spin">
+					<div></div>
+				</div>
+			</div>
+			<!-- triangle-skew-spin -->
+			<div class="example exp30">
+				<div class="triangle-skew-spin">
+					<div></div>
+				</div>
+			</div>
+			<!-- point-chase -->
+			<div class="example exp31">
+				<div class="point-chase">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-bounce -->
+			<div class="example exp32">
+				<div class="ball-bounce">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- ball-swing -->
+			<div class="example exp33">
+				<div class="ball-swing">
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- circle-fade -->
+			<div class="example exp34">
+				<div class="circle-fade">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- grid-cube -->
+			<div class="example exp35">
+				<div class="grid-cube">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- fold-cube -->
+			<div class="example exp36">
+				<div class="fold-cube">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- wander-cube -->
+			<div class="example exp37">
+				<div class="wander-cube">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+			<!-- line-scale-party -->
+			<div class="example exp38" style="padding: 26px">
+				<div class="line-scale-party">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

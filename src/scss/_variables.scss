@@ -1,0 +1,38 @@
+/**
+  Name: global variable
+  Author: william
+  Author URI: https://www.darkcrystal.com/
+  Description: global variables for websites
+  Version: 1.0.1
+	Tags: variables
+  Update: January 18th,2022
+*/
+
+// Prefix for [Hover|Loader|Font|] class names
+$nameSpaceHover: 'hvr' !default;
+$nameSpaceLoad: 'load' !default;
+$nameSpaceFont: 'font' !default;
+
+// Colors
+$color: #fff !default;
+
+
+// points of the compass
+$top: auto !default;
+$right: auto !default;
+$bottom: auto !default;
+$left: auto !default;
+
+// Dimensions
+$width: auto !default;
+$height: auto !default;
+
+// Inner margin and Outer margin
+$padding: 0 !default;
+$margin: auto !default;
+
+// Browser Prefixes - Which CSS prefixes should be used?
+$webkit: true !default;
+$moz: false !default;
+$ms: false !default;
+$o: false !default;

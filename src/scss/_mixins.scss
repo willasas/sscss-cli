@@ -1,0 +1,59 @@
+/**
+  Name: global mixins
+  Author: william
+  Author URI: https://www.darkcrystal.com/
+  Description: global mixins for websites
+  Version: 1.0.1
+	Tags: mixins
+  Update: January 18th,2022
+*/
+
+// @import 'variables';
+
+/**
+* 元素大小[Element size]
+* @param {String|Number} $width 宽度
+* @param {String|Number} $height 高度
+*/
+@mixin element-size($width: auto, $height: auto) {
+  width: $width;
+  height: $height;
+}
+
+/**
+* 元素居中[Utility mixin for centering]
+* @param {String|Number} $width 宽度
+*/
+@mixin dom-center($margin: auto) {
+  margin: $margin;
+}
+
+/**
+* 元素添加阴影[Add shadow to element]
+* @param {String} $shadows 宽度
+*/
+@mixin box-shadow($shadows...) {
+  @if length($shadows)>=2 {
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+  }
+
+  @else {
+    $shadows: 0 0 2px rgba(#000, .25);
+    -webkit-box-shadow: $shadows;
+    box-shadow: $shadows;
+  }
+}
+
+// 混合器调用
+.size {
+  @include element-size(auto, auto);
+}
+
+.center {
+  @include dom-center(auto);
+}
+
+.box-shadow1 {
+  @include box-shadow(0 0 1px rgba(#000, .5), 0 0 2px rgba(#000, .2));
+}

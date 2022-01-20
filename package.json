@@ -1,0 +1,35 @@
+{
+  "name": "sscss-cli",
+  "version": "1.0.0",
+  "description": "A web front end style management cli",
+  "main": "index.js",
+  "bin": {
+    "sscss-cli": "./bin/index.js"
+  },
+  "scripts": {
+    "test": "test -sscsscli"
+  },
+  "keywords": [
+    "cli",
+    "front",
+    "end",
+    "style",
+    "scss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/willasas/sscss-cli.git"
+  },
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "commander": "^5.0.0",
+    "fs-extra": "^9.0.0",
+    "inquirer": "^7.1.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions"
+  ],
+  "author": "william assas\u001b[D\u001b[\u001b[\u001b[C\u001b[Cas",
+  "license": "ISC"
+}
