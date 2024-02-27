@@ -1,4 +1,4 @@
-# DC Node Cli
+# SSCSS Cli
 
 - 使用node.js开发的scss cli工具，汇总了常用样式
 ## 安装
